@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Course Project Management</title>
+    <link rel="stylesheet" href="timelines.css"> <!-- Link to the same CSS file -->
+    <style>
+        /* Additional styles for the project grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px; /* Space between grid items */
+            padding: 20px; /* Padding around the grid */
+        }
+
+        .project-card {
+            background-color: #ecf0f1; /* Light background for each project card */
+            padding: 20px; /* Padding inside each card */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1abc9c; /* Color for download links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .download-link:hover {
+            color: #34495e; /* Change color on hover */
+        }
+
+        /* Styles for the upload form */
+        .upload-form {
+            background-color: #f9f9f9; /* Light background for the form */
+            padding: 20px; /* Padding inside the form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            margin-bottom: 20px; /* Space below the form */
+        }
+
+        .upload-form h2 {
+            margin-bottom: 15px; /* Space below the heading */
+        }
+
+        .upload-form label {
+            display: block; /* Make labels block elements */
+            margin-top: 10px; /* Space above each label */
+        }
+
+        .upload-form input[type="text"],
+        .upload-form textarea,
+        .upload-form input[type="file"] {
+            width: calc(100% - 22px); /* Full width minus padding/border */
+            padding: 10px; /* Padding inside input fields */
+            border-radius: 5px; /* Rounded corners for inputs */
+            border: 1px solid #ccc; /* Border for inputs */
+            margin-top: 5px; /* Space above input fields */
+        }
+
+        .upload-form button {
+            background-color: #1abc9c; /* Button color */
+            color: white; /* Text color for button */
+            border: none; /* Remove default border */
+            padding: 10px 15px; /* Padding inside button */
+            border-radius: 5px; /* Rounded corners for button */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-top: 15px; /* Space above button */
+        }
+
+        .upload-form button:hover {
+            background-color: #16a085; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="CP.HTML">Major Project Management</a>
+            </div>
+          <!-- Search Bar -->
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search..." onkeyup="performSearch()">
+</div>
+          <ul class="nav-links">
+              <li><a href="timelines.html">Timelines</a></li>
+              <li><a href="domain.html">Domain</a></li>
+              <li><a href="display_projects.php">Documentation</a></li>
+              <li><a href="project.html">Project</a></li>
+              <li><a href='groupmate.html'>Group Mate Details</a></li> <!-- Link back to form page -->
+              <li><a href='display_data.php'>View Group Mates</a></li> <!-- Link to this page -->
+          </ul>
+      </div>
+    </nav>
+
+    <!-- Project Section -->
+    <section class="content">
+        <div class="upload-form">
+            <h2>Upload New Project</h2>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <label for="title">Project Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">Project Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <label for="researchPaper">Research Paper (PDF):</label>
+                <input type="file" id="researchPaper" name="researchPaper" accept=".pdf" required>
+
+                <label for="presentation">Presentation (PPT):</label>
+                <input type="file" id="presentation" name="presentation" accept=".pptx">
+
+                <label for="workingModel">Working Model (Video):</label>
+                <input type="file" id="workingModel" name="workingModel" accept=".mp4,.mov,.avi">
+
+                <label for="finalReport">Final Report (PDF):</label>
+                <input type="file" id="finalReport" name="finalReport" accept=".pdf">
+
+                <button type="submit">Upload Project</button>
+            </form>
+        </div>
+
+        <h2>Project Overview</h2>
+        <p>Details about various projects, including research papers, presentations, working models, and reports.</p>
+
+        <!-- Project Grid -->
+        <div class="project-grid">
+
+            <!-- Project Card Example -->
+            <!-- You would replace these static cards with dynamic data from your database -->
+            
+           <!-- Project Card Example -->
+           <!-- This is a static example. Replace with dynamic data from your database as shown previously. -->
+           <?php include 'display_projects.php'; ?> 
+
+           <!-- End of project-grid -->
+
+       </div> 
+   </section>
+
+   <!-- Footer -->
+   <footer>
+       <p>&copy; 2024 Course Project Management. All rights reserved.</p>
+   </footer>
+
+</body>
+</html> 

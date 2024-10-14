@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative; /* Ensure positioning context for absolute elements */
+}
+
+.poster-background {
+    background-image: url('POSTER.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    position: absolute; /* Position it behind other content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind other elements */
+}
+
+nav {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for nav */
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-content {
+    color: #333; /* Dark text for better readability */
+}
+
+.cta-button {
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Additional styles can be added as needed */

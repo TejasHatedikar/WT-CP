@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain - Major Project Management</title>
+    <link rel="stylesheet" href="timelines.css"> <!-- Link to the same CSS file -->
+    <style>
+        /* Additional styles for the domain section */
+        .content {
+            padding: 20px; /* Add padding around the content */
+        }
+
+        .domain-grid {
+            display: grid; /* Use CSS Grid */
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px; /* Space between grid items */
+            margin-top: 20px; /* Space above the grid */
+        }
+
+        .domain-box {
+            background-color: #ecf0f1; /* Light background for each domain item */
+            padding: 40px; /* Increased padding for larger boxes */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            text-align: center; /* Center text */
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover effect */
+            font-size: 1.2em; /* Increase font size for better readability */
+        }
+
+        .domain-box:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            background-color: #2ecccc; /* Change background color to green on hover */
+            color: white; /* Change text color to white for contrast */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="CP.HTML">Major Project Management</a>
+            </div>
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="Search..." name="query" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <ul class="nav-links">
+                <li><a href="timelines.html">Timelines</a></li>
+                <li><a href="domain.html">Domain</a></li>
+                <li><a href="display_projects.php">Documentation</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href='groupmate.html'>Group Mate Details</a></li> <!-- Link back to form page -->
+                <li><a href='display_data.php'>View Group Mates</a></li> <!-- Link to this page -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Domain Section -->
+    <section class="content">
+        <h2>Engineering Project Domains</h2>
+        <p>Explore various domains relevant to engineering projects.</p>
+
+        <!-- Grid of Domains -->
+        <div class="domain-grid">
+            <div class="domain-box">Image Processing</div>
+            <div class="domain-box">Internet of Things (IoT)</div>
+            <div class="domain-box">Embedded Systems</div>
+            <div class="domain-box">Data Mining</div>
+            <div class="domain-box">Big Data</div>
+            <div class="domain-box">Cloud Computing</div>
+            <div class="domain-box">Machine Learning</div>
+            <div class="domain-box">Cybersecurity</div>
+            <div class="domain-box">Wireless Communication</div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Course Project Management. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

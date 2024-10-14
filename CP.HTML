@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major Project Management</title>
+    <link rel="stylesheet" href="CP.CSS">
+    <style>
+        /* Additional styles for the landing page */
+        body {
+            font-family: Arial, sans-serif; /* Set a clean font */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #f4f4f4; /* Light background color */
+        }
+
+        .hero {
+            background-color: rgb(255, 234, 207); /* Hero section background color */
+            color: black; /* Text color */
+            padding: 40px 20px; /* Padding for the hero section */
+            text-align: center; /* Center text */
+        }
+
+        .hero-content h1, p {
+            margin-bottom: 20px; /* Space below the heading */
+            color: black;
+        }
+
+        .hero-content p {
+            margin-bottom: 30px; /* Space below the heading */
+            color: black;
+        }
+
+        .cta-button {
+            background-color: #2ecc71; /* Call to action button color */
+            color: white; /* Button text color */
+            padding: 10px 20px; /* Button padding */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for button */
+            text-decoration: none; /* Remove underline from link */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .cta-button:hover {
+            background-color: #27ae60; /* Darker green on hover */
+        }
+
+        /* Main Content */
+        .content {
+            display: grid; /* Use grid layout */
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px; /* Space between grid items */
+            padding: 20px; /* Padding around the content */
+        }
+
+        .section-box {
+            background-color: white; /* White background for sections */
+            padding: 20px; /* Reduced padding inside each box for smaller size */
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            text-align: center; /* Center text inside boxes */
+            text-decoration: none; /* Remove underline from links */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+            width: 100%; /* Full width within the grid */
+            height: 150px; /* Adjusted height for each section */
+            margin: 10px 0; /* Space between sections vertically */
+        }
+
+        .section-box:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            background-color: #2ecccc; /* Change background color to green on hover */
+            color: white; /* Change text color to white for contrast */
+        }
+
+        h2 {
+            margin-top: 0; /* Remove top margin from headings */
+        }
+
+        footer {
+            text-align: center; /* Center footer text */
+            padding: 10px 0; /* Padding for footer */
+            background-color: #3498db; /* Footer background color matching hero section */
+            color: white; /* Footer text color */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <div class="container">
+        <div class="logo">
+            <a href="CP.HTML">Major Project Management</a>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search..." onkeyup="performSearch()">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="timelines.html">Timelines</a></li>
+            <li><a href="domain.html">Domain</a></li>
+            <li><a href="display_projects.php">Documentation</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href='groupmate.html'>Group Mate Details</a></li> 
+            <li><a href='display_data.php'>View Group Mates</a></li> 
+            <li><a href="singup.html">Signup</a></li> 
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Major Project Management</h1>
+        <p>Organize, track, and manage your Major projects effectively.</p>
+        <a href="#project" class="cta-button">Get Started</a>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="content">
+    <a href="timelines.html" class="section-box">
+        <h2>Timelines</h2>
+        <p>Keep track of your project deadlines and milestones.</p>
+    </a>
+
+    <a href="domain.html" class="section-box">
+        <h2>Domain</h2>
+        <p>Classify your projects into different domains.</p>
+    </a>
+
+    <a href='display_projects.php' class="section-box">
+        <h2>Documentation</h2>
+        <p>Store and manage all project-related documents.</p>
+    </a>
+
+    <a href="project.html" class="section-box">
+        <h2>Project</h2>
+        <p>View and manage all your course projects in one place.</p>
+    </a>
+</section>
+
+<!-- Include JavaScript -->
+<script src="search.js"></script>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Course Project Management. All rights reserved.</p>
+</footer>
+
+<script>
+// JavaScript function to perform search across visible sections
+function performSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Define sections to search through
+    const sections = document.querySelectorAll('.section-box');
+
+    // Loop through each section
+    for (let section of sections) {
+        if (section.textContent.toLowerCase().includes(query)) {
+            // Scroll to the first matching section
+            section.scrollIntoView({ behavior: 'smooth' });
+            return; // Exit after finding the first match
+        }
+    }
+
+    // If no match is found, you can add an alert or message here
+}
+</script>
+
+</body>
+</html>
